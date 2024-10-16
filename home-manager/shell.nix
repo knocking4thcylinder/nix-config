@@ -13,7 +13,7 @@
 
     shellAliases = {
       ll = "ls -l";
-      rebuild = "sudo nixos-rebuild switch --flake ~/nix-config#lev-laptop";
+      rebuild = "nh os switch ~/nix-config";
     };
     history = {
       size = 10000;

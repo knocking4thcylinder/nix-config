@@ -5,6 +5,8 @@
 
     enable = true;
     defaultEditor = true;
+    vimAlias = true;
+    viAlias = true;
 
     globals = {
       mapleader = " ";
@@ -23,6 +25,7 @@
       lualine.enable = true;
       web-devicons.enable = true;
       sleuth.enable = true;
+      tmux-navigator.enable = true;
 
       todo-comments.settings = {
         enable = true;
@@ -55,6 +58,9 @@
         };
       };
 
+      lsp-format = {
+        enable = true;
+      };
     };
   };
 }
