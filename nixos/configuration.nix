@@ -90,6 +90,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget
+    btop
     inputs.zen-browser.packages."${system}".specific
     zig
     wl-clipboard
