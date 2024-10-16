@@ -195,6 +195,23 @@
         "type": "github"
       }
     },
+    "flake-utils_3": {
+      "inputs": {
+        "systems": "systems_3"
+      },
+      "locked": {
+        "lastModified": 1705309234,
+        "narHash": "sha256-uNRRNRKmJyCRC/8y1RqBkqWBLM034y4qN7EprSdmgyA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "1ef2e671c3b0c19053962c07dbda38332dcebf26",
+        "type": "github"
+      },
+      "original": {
+        "id": "flake-utils",
+        "type": "indirect"
+      }
+    },
     "fromYaml": {
       "flake": false,
       "locked": {
@@ -429,6 +446,20 @@
     },
     "nixpkgs_3": {
       "locked": {
+        "lastModified": 1708093448,
+        "narHash": "sha256-gohEm3/NVyu7WINFhRf83yJH8UM2ie/KY9Iw3VN6fiE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "c7763249f02b7786b4ca36e13a4d7365cfba162f",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
         "lastModified": 1727348695,
         "narHash": "sha256-J+PeFKSDV+pHL7ukkfpVzCOO7mBSrrpJ3svwBFABbhI=",
         "owner": "nixos",
@@ -501,6 +532,7 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixvim": "nixvim",
         "stylix": "stylix",
+        "yandex-music": "yandex-music",
         "zen-browser": "zen-browser"
       }
     },
@@ -550,6 +582,21 @@
       }
     },
     "systems_2": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_3": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
@@ -634,9 +681,41 @@
         "type": "github"
       }
     },
+    "yandex-music": {
+      "inputs": {
+        "flake-utils": "flake-utils_3",
+        "nixpkgs": "nixpkgs_3",
+        "ymExe": "ymExe"
+      },
+      "locked": {
+        "lastModified": 1728994702,
+        "narHash": "sha256-W+k3Fcx8t/cSONfGJRNx4c8jcULms+xowwXuvgOXzUQ=",
+        "owner": "cucumber-sp",
+        "repo": "yandex-music-linux",
+        "rev": "e09f37ccd542e504a633dbf98782ca66d348273e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cucumber-sp",
+        "repo": "yandex-music-linux",
+        "type": "github"
+      }
+    },
+    "ymExe": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-6biiYx9ThmcITXX+cJrQGfuD/ReQM3a6pmY+fmfwuIU=",
+        "type": "file",
+        "url": "https://music-desktop-application.s3.yandex.net/stable/Yandex_Music_x64_5.23.2.exe"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://music-desktop-application.s3.yandex.net/stable/Yandex_Music_x64_5.23.2.exe"
+      }
+    },
     "zen-browser": {
       "inputs": {
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 1727721329,

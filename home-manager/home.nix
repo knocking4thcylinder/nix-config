@@ -8,16 +8,10 @@
   pkgs,
   ...
 }: {
-  # You can import other home-manager modules here
   imports = [
-    # If you want to use modules your own flake exports (from modules/home-manager):
-    # outputs.homeManagerModules.example
-
-    # Or modules exported from other flakes (such as nix-colors):
-    # inputs.nix-colors.homeManagerModules.default
     inputs.nixvim.homeManagerModules.nixvim
-
-    # You can also split up your configuration and import pieces of it here:
+    inputs.yandex-music.homeManagerModules.default
+    
     ./nvim.nix
     ./shell.nix
     ./terminal.nix
@@ -63,6 +57,8 @@
 
   targets.genericLinux.enable = true;
 
+  programs.yandex-music.enable = true;
+  programs.yandex-music.tray.enable = true;
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git = {

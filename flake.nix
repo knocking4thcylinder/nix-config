@@ -2,19 +2,15 @@
   description = "Your new nix config";
 
   inputs = {
-    # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     stylix.url = "github:danth/stylix";
     base16.url = "github:SenchoPens/base16.nix";
-    # You can access packages and modules from different nixpkgs revs
-    # at the same time. Here's an working example:
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
+    yandex-music.url = "github:cucumber-sp/yandex-music-linux";
+
     nixvim = {
       url = "github:nix-community/nixvim";
-      # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
-      # url = "github:nix-community/nixvim/nixos-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
