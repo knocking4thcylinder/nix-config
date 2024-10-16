@@ -52,7 +52,6 @@
   home.packages = with pkgs; [ 
     steam
     lutris
-    github-cli
   ];
 
   targets.genericLinux.enable = true;

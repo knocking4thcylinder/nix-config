@@ -1,7 +1,11 @@
 { pkgs, config, ... }:
 
 {
-  programs.any-nix-shell.enable = true;
+
+  home.packages = with pkgs; [ 
+    github-cli
+    any-nix-shell
+  ];
   programs.zsh = {
     enable = true;
     enableCompletion = true;
