@@ -6,6 +6,13 @@
     github-cli
     any-nix-shell
   ];
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+    options = [
+      "--cmd cd"
+    ];
+  };
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -15,6 +22,8 @@
     initExtra = ''
       any-nix-shell zsh --info-right | source /dev/stdin
       bindkey -v '^?' backward-delete-char
+      source "$(fzf-share)/key-bindings.zsh"
+      source "$(fzf-share)/completion.zsh"
     '';
 
     shellAliases = {

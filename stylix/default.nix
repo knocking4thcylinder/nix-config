@@ -8,8 +8,8 @@
     };
     polarity = "dark";
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark-dark.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark-dark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     # base16Scheme = (config.lib.base16.mkSchemeAttrs "${pkgs.base16-schemes}/share/themes/rose-pine.yaml").override {
     #   scheme = "Now it's my scheme >:]";
     #   base00 = "000000";  # make background completely black
