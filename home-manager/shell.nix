@@ -1,6 +1,7 @@
 { pkgs, config, ... }:
 
 {
+  programs.any-nix-shell.enable = true;
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -8,12 +9,14 @@
     syntaxHighlighting.enable = true;
  
     initExtra = ''
+      any-nix-shell zsh --info-right | source /dev/stdin
       bindkey -v '^?' backward-delete-char
     '';
 
     shellAliases = {
       ll = "ls -l";
       rebuild = "nh os switch ~/nix-config";
+      nix-shell = "nix-shell --run zsh";
     };
     history = {
       size = 10000;
