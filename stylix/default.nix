@@ -3,8 +3,8 @@
 {
   stylix = {
     targets = {
-      "neovim".enable = false;
-      "nixvim".enable = false;
+      neovim.enable = false;
+      nixvim.enable = false;
     };
     polarity = "dark";
     enable = true;
