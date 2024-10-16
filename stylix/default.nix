@@ -2,9 +2,10 @@
 
 {
   stylix = {
-    # targets = {
-    #   "neovim".enable = false;
-    # };
+    targets = {
+      nixvim.enable = false;
+      gnome.enable = false;
+    };
     polarity = "dark";
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";

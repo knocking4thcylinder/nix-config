@@ -1,6 +1,11 @@
 { pkgs, config, ... }:
 
 {
+
+  home.packages = with pkgs; [ 
+    github-cli
+    any-nix-shell
+  ];
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -8,12 +13,14 @@
     syntaxHighlighting.enable = true;
  
     initExtra = ''
+      any-nix-shell zsh --info-right | source /dev/stdin
       bindkey -v '^?' backward-delete-char
     '';
 
     shellAliases = {
       ll = "ls -l";
-      rebuild = "sudo nixos-rebuild switch --flake ~/nix-config#lev-laptop";
+      rebuild = "nh os switch ~/nix-config";
+      nix-shell = "nix-shell --run zsh";
     };
     history = {
       size = 10000;

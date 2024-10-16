@@ -89,6 +89,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    nh
+    ookla-speedtest
     wget
     btop
     inputs.zen-browser.packages."${system}".specific
