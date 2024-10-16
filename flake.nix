@@ -62,11 +62,23 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       # FIXME replace with your hostname
+      lev-pc = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main nixos configuration file <
+          ./nixos/hosts/pc-hardware.nix
+          ./nixos/configuration.nix
+	  inputs.stylix.nixosModules.stylix
+	  inputs.base16.nixosModule 
+        ];
+      };
+
       lev-laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
+          ./nixos/hosts/laptop-hardware.nix
 	  inputs.stylix.nixosModules.stylix
 	  inputs.base16.nixosModule
         ];
