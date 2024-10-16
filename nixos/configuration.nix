@@ -90,6 +90,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     nh
+    ookla-speedtest
     wget
     inputs.zen-browser.packages."${system}".specific
     zig
