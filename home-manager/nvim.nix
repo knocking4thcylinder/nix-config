@@ -3,8 +3,7 @@
 {
   programs.nixvim = {
 
-    # colorschemes.rose-pine.enable = true;
-    colorschemes.onedark.enable = true;
+    colorschemes.rose-pine.enable = true;
     enable = true;
     defaultEditor = true;
     vimAlias = true;
@@ -15,6 +14,7 @@
     };
 
     opts = {
+      background = "";
       number = true;
       relativenumber = true;
       shiftwidth = 2;

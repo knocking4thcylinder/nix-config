@@ -5,6 +5,7 @@
   home.packages = with pkgs; [ 
     github-cli
     any-nix-shell
+    fzf
   ];
   programs.zoxide = {
     enable = true;
