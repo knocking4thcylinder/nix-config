@@ -34,7 +34,15 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  services.xserver.videoDrivers = [ "amdgpu" ];
+
   hardware.pulseaudio.enable = false;
+  
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -70,8 +78,14 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
-  # Install firefox.
-  programs.firefox.enable = true;
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; 
+    dedicatedServer.openFirewall = true;
+    gamescopeSession.enable = true;
+  };
+  programs.gamemode.enable = true;
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
@@ -88,7 +102,12 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  environment.sessionVariables = {
+  STEAM_EXTRA_COMPAT_TOOLS_PATHS = 
+    "/home/lev-nix/.steam/root/compatibilitytools.d";
+  };
   environment.systemPackages = with pkgs; [
+    protonup
     nh
     ookla-speedtest
     wget
@@ -97,6 +116,7 @@
     zig
     wl-clipboard
     gcc
+    mangohud
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

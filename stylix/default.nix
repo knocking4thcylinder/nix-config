@@ -4,7 +4,7 @@
   stylix = {
     targets = {
       nixvim.enable = false;
-      gnome.enable = false;
+      # gnome.enable = false;
     };
     polarity = "dark";
     enable = true;

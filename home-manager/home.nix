@@ -12,7 +12,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     inputs.yandex-music.homeManagerModules.default
     
-    ./nvim.nix
+    ./nixvim
     ./shell.nix
     ./terminal.nix
   ];
@@ -51,12 +51,12 @@
   # Add stuff for your user as you see fit:
   home.packages = with pkgs; [ 
     telegram-desktop
-    steam
+    vesktop
+    zoom-us
     lutris
   ];
 
   targets.genericLinux.enable = true;
-
   programs.yandex-music.enable = true;
   programs.yandex-music.tray.enable = true;
   # Enable home-manager and git
