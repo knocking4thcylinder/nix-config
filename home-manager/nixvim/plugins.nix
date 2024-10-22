@@ -5,6 +5,7 @@
     lualine.enable = true;
     web-devicons.enable = true;
     sleuth.enable = true;
+    commentary.enable = true;
     # hardtime.enable = true;
     tmux-navigator.enable = true;
 

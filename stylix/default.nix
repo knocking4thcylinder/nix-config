@@ -3,21 +3,18 @@
 {
   stylix = {
     targets = {
-      nixvim.enable = false;
+      # nixvim.enable = false;
       # gnome.enable = false;
     };
     polarity = "dark";
     enable = true;
-    base16Scheme = ./themes/rose-pine.yaml;
-    # base16Scheme = (config.lib.base16.mkSchemeAttrs "${pkgs.base16-schemes}/share/themes/rose-pine.yaml").override {
-    #   scheme = "Now it's my scheme >:]";
-    #   base00 = "000000";  # make background completely black
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/darkmoss.yaml";
+    override.base00 = "101010";
+    override.base01 = "101010";
+    # opacity = {
+    #   terminal = 1;
+    #   applications = 1;
     # };
-    # override.base16Scheme.base00 = "000000";
-    opacity = {
-      terminal = 0.9;
-      applications = 1;
-    };
     image = ./nix-wallpaper-simple-dark-gray.png;
     fonts = rec {
       sizes = {

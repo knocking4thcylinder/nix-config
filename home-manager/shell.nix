@@ -21,9 +21,9 @@
     
     extraConfig = ''
       unbind %
-      bind | split-window -v
+      bind - split-window -v
       unbind '"'
-      bind - split-window -h                                                              
+      bind | split-window -h                                                              
 
       bind -r j resize-pane -D 5
       bind -r h resize-pane -L 5

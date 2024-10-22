@@ -8,9 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./modules/spoofdpi.nix
-      ../stylix
       # Import home-manager's NixOS module
       inputs.home-manager.nixosModules.home-manager
+      ../stylix
     ];
 
 

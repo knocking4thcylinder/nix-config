@@ -58,7 +58,8 @@
 
   targets.genericLinux.enable = true;
   programs.yandex-music.enable = true;
-  programs.yandex-music.tray.enable = true;
+  programs.fastfetch.enable = true;
+  programs.yandex-music.tray.enable = false;
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git = {

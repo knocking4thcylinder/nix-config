@@ -50,10 +50,10 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./nixos/hosts/pc-hardware.nix
-          ./nixos/configuration.nix
 	  inputs.stylix.nixosModules.stylix
 	  inputs.base16.nixosModule 
+          ./nixos/hosts/pc-hardware.nix
+          ./nixos/configuration.nix
         ];
       };
 
@@ -61,10 +61,10 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./nixos/configuration.nix
-          ./nixos/hosts/laptop-hardware.nix
 	  inputs.stylix.nixosModules.stylix
 	  inputs.base16.nixosModule
+          ./nixos/configuration.nix
+          ./nixos/hosts/laptop-hardware.nix
         ];
       };
     };
