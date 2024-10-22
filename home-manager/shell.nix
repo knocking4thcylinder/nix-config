@@ -84,7 +84,8 @@
     shellAliases = {
       ll = "ls -l";
       rebuild = "nh os switch ~/nix-config";
-      nix-shell = "nix-shell --run zsh";
+      update = "nix flake update ~/nix-config";
+      # nix-shell = "nix-shell --run zsh";
     };
     history = {
       size = 10000;
