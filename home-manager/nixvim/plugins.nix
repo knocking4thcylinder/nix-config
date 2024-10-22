@@ -5,6 +5,7 @@
     lualine.enable = true;
     web-devicons.enable = true;
     sleuth.enable = true;
+    # hardtime.enable = true;
     tmux-navigator.enable = true;
 
     todo-comments.settings = {
@@ -24,6 +25,22 @@
       };
     };
 
+    cmp = {
+      autoEnableSources = true;
+      settings.sources = [
+        { name = "nvim_lsp"; }
+        { name = "path"; }
+        { name = "buffer"; }
+      ];
+      settings = {
+        completion.autocomplete = [
+          "require('cmp.types').cmp.TriggerEvent.TextChanged"
+        ];
+        window.completion.border = "rounded";
+        window.documentation.border = "rounded";
+      };
+    };
+
     lsp = {
       enable = true;
       servers = {
@@ -33,9 +50,11 @@
           installRustc = true;
           installCargo = true;
         };
+        clangd.enable = true;
         zls.enable = true;
         pylsp.enable = true;
         lua_ls.enable = true;
+        arduino_language_server.enable = true;
       };
     };
 
