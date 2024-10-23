@@ -8,7 +8,7 @@
     };
     polarity = "dark";
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/darkmoss.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/vesper.yaml";
     override.base00 = "101010";
     override.base01 = "101010";
     # opacity = {
