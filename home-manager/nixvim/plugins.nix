@@ -26,27 +26,10 @@
       };
     };
 
-    cmp = {
-      autoEnableSources = true;
-      settings.sources = [
-        { name = "nvim_lsp"; }
-        { name = "path"; }
-        { name = "cmp-calc"; }
-        { name = "buffer"; }
-      ];
-      settings = {
-        completion.autocomplete = [
-          "require('cmp.types').cmp.TriggerEvent.TextChanged"
-        ];
-        window.completion.border = "rounded";
-        window.documentation.border = "rounded";
-      };
-    };
-
     lsp = {
       enable = true;
       servers = {
-        nil_ls.enable = true;
+        nixd.enable = true;
         rust_analyzer = {
           enable = true;
           installRustc = true;
@@ -57,6 +40,62 @@
         pylsp.enable = true;
         lua_ls.enable = true;
         arduino_language_server.enable = true;
+      };
+
+      keymaps = {
+        lspBuf = {
+          gd = "definition";
+          gD = "references";
+          gt = "type_definition";
+          gi = "implementation";
+          K = "hover";
+          "<F2>" = "rename";
+        };
+      };
+    };
+
+    cmp = {
+      enable = true;
+      autoEnableSources = true;
+      settings.sources = [
+        { name = "nvim_lsp"; }
+        { name = "path"; }
+        { name = "cmp-calc"; }
+        { name = "buffer"; }
+      ];
+      settings = {
+        mapping = {
+          # "<C-d>" = "cmp.mapping.scroll_docs(-4)";
+          # "<C-f>" = "cmp.mapping.scroll_docs(4)";
+          # "<C-Space>" = "cmp.mapping.complete()";
+          # "<C-e>" = "cmp.mapping.close()";
+          # "<Tab>" = {
+          #   modes = ["i" "s"];
+          #   action = "cmp.mapping.select_next_item()";
+          # };
+          # "<S-Tab>" = {
+          #   modes = ["i" "s"];
+          #   action = "cmp.mapping.select_prev_item()";
+          # };
+          # "<CR>" = "cmp.mapping.confirm({ select = true })";
+
+          __raw = ''
+            cmp.mapping.preset.insert({
+              ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+              ['<C-f>'] = cmp.mapping.scroll_docs(4),
+              ['<C-Space>'] = cmp.mapping.complete(),
+              ['<Tab>'] = cmp.mapping.select_next_item(),
+              ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+              ['<C-e>'] = cmp.mapping.abort(),
+              ['<CR>'] = cmp.mapping.confirm({ select = true }),
+            })
+          '';
+        };
+        completion.autocomplete = [
+          "require('cmp.types').cmp.TriggerEvent.TextChanged"
+        ];
+        window.completion.border = "rounded";
+        window.documentation.border = "rounded";
       };
     };
 
