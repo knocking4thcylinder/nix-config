@@ -17,6 +17,7 @@
     ./terminal.nix
   ];
 
+  stylix.targets.nixvim.enable = false;
   nixpkgs = {
     # You can add overlays here
     overlays = [

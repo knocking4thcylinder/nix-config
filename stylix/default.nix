@@ -8,10 +8,10 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     override.base00 = "101010";
     override.base01 = "101010";
-    # opacity = {
-    #   terminal = 1;
-    #   applications = 1;
-    # };
+    opacity = {
+      terminal = 0.9;
+      applications = 1;
+    };
     image = ./nix-wallpaper-simple-dark-gray.png;
     targets = {
       nixvim.enable = false;
