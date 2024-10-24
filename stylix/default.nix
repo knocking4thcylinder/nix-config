@@ -14,7 +14,7 @@
     # };
     image = ./nix-wallpaper-simple-dark-gray.png;
     targets = {
-      nixvim.enable = lib.mkForce false;
+      nixvim.enable = false;
       # gnome.enable = true;
       # console.enable = true;
       # gtk.enable = true;
