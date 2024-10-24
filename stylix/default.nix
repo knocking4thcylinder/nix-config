@@ -1,14 +1,11 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, options, ... }:
 
 {
   stylix = {
-    targets = {
-      # nixvim.enable = false;
-      # gnome.enable = false;
-    };
-    polarity = "dark";
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/darkmoss.yaml";
+    autoEnable = true;
+    polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     override.base00 = "101010";
     override.base01 = "101010";
     # opacity = {
@@ -16,6 +13,13 @@
     #   applications = 1;
     # };
     image = ./nix-wallpaper-simple-dark-gray.png;
+    targets = {
+      nixvim.enable = lib.mkForce false;
+      # gnome.enable = true;
+      # console.enable = true;
+      # gtk.enable = true;
+      # grub.enable = true;
+    };
     fonts = rec {
       sizes = {
         terminal = 12;
