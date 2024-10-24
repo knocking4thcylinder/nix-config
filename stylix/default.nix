@@ -6,8 +6,10 @@
     autoEnable = true;
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
-    override.base00 = "101010";
-    override.base01 = "101010";
+    override = {
+      base00 = "101010";
+      base01 = "101010";
+    };
     opacity = {
       terminal = 0.9;
       applications = 1;

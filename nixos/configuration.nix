@@ -6,11 +6,10 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./modules/spoofdpi.nix
-      # Import home-manager's NixOS module
-      inputs.home-manager.nixosModules.home-manager
       ../stylix
+      inputs.home-manager.nixosModules.home-manager
     ];
 
 
@@ -102,6 +101,8 @@
       lev-nix = import ../home-manager/home.nix;
     };
   };
+
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
