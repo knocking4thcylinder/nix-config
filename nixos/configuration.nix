@@ -31,6 +31,19 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  
+  services.avahi = {
+  nssmdns = true;
+    enable = true;
+    ipv4 = true;
+    ipv6 = true;
+    publish = {
+      enable = true;
+      addresses = true;
+      workstation = true;
+    };
+  };
+
 
   # Enable sound with pipewire.
   hardware.graphics = {
@@ -111,6 +124,7 @@
     "/home/lev-nix/.steam/root/compatibilitytools.d";
   };
   environment.systemPackages = with pkgs; [
+    busybox
     protonup
     nh
     ookla-speedtest

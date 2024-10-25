@@ -28,27 +28,7 @@
     lsp = {
       enable = true;
       servers = {
-        nixd = {
-          enable = true;
-          settings = {
-            # __raw = ''
-            #   nixpkgs = {
-            #     expr = "import <nixpkgs> { }",
-            #   },
-            #   formatting = {
-            #     command = { "alejandra" }, -- or nixfmt or nixpkgs-fmt
-            #   },
-            #   -- options = {
-            #   --   nixos = {
-            #   --       expr = '(builtins.getFlake "/PATH/TO/FLAKE").nixosConfigurations.CONFIGNAME.options',
-            #   --   },
-            #   --   home_manager = {
-            #   --       expr = '(builtins.getFlake "/PATH/TO/FLAKE").homeConfigurations.CONFIGNAME.options',
-            #   --   },
-            #   -- },
-            # '';
-          };
-        };
+        nil_ls.enable = true;
         rust_analyzer = {
           enable = true;
           installRustc = true;
