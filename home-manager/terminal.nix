@@ -4,6 +4,7 @@
   programs.kitty = {
     enable = true;
     settings = {
+      shell = "/home/lev-nix/.nix-profile/bin/nu";
       confirm_os_window_close = 1;
       dynamic_background_opacity = true;
       enable_audio_bell = false;
