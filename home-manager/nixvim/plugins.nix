@@ -1,9 +1,20 @@
 { pkgs, config, ... }:
 
 {
+  programs.nixvim = {
+    extraPlugins = [
+      pkgs.vimPlugins.stay-centered-nvim
+    ];
+  
+  extraConfigLua = ''
+    require('stay-centered').setup({})
+  '';
+  };
+
   programs.nixvim.plugins = {
     lualine.enable = true;
     web-devicons.enable = true;
+    codeium-nvim.enable = true;
     sleuth.enable = true;
     commentary.enable = true;
     tmux-navigator.enable = true;
