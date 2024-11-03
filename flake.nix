@@ -8,7 +8,8 @@
     base16.url = "github:SenchoPens/base16.nix";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     yandex-music.url = "github:cucumber-sp/yandex-music-linux";
-
+    nixos-wsl.url = "github:nix-community/NixOS-WSL";
+    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +27,6 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
-    # Supported systems for your flake packages, shell, etc.
     systems = [
       "aarch64-linux"
       "i686-linux"
@@ -34,8 +34,6 @@
       "aarch64-darwin"
       "x86_64-darwin"
     ];
-    # This is a function that generates an attribute by calling a function you
-    # pass to it, with each system as an argument
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
     packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
@@ -46,10 +44,20 @@
     homeManagerModules = import ./modules/home-manager;
 
     nixosConfigurations = {
+      lev-wsl = nixpkgs.lib.nixosSystem {
+      	specialArgs = {inherit inputs outputs;};
+	modules = [
+	  inputs.nixos-wsl.nixosModules.wsl
+	  inputs.stylix.nixosModules.stylix
+	  inputs.base16.nixosModule 
+	  ./nixos/wsl.nix
+	  ./nixos/hosts/hardware-wsl.nix
+	];
+      };
+      
       lev-pc = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          # > Our main nixos configuration file <
 	  inputs.stylix.nixosModules.stylix
 	  inputs.base16.nixosModule 
           ./nixos/hosts/pc-hardware.nix
@@ -60,7 +68,6 @@
       lev-laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          # > Our main nixos configuration file <
 	  inputs.stylix.nixosModules.stylix
 	  inputs.base16.nixosModule
           ./nixos/configuration.nix

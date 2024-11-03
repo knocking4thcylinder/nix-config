@@ -9,6 +9,7 @@
     [
       ./modules/spoofdpi.nix
       ../stylix
+      yandex-music.nixosModules.default
       inputs.home-manager.nixosModules.home-manager
     ];
 
@@ -117,6 +118,7 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
+  programs.yandex-music.enable = true;
 
   programs.steam = {
     enable = true;

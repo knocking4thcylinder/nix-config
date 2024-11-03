@@ -10,7 +10,6 @@
 }: {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
-    inputs.yandex-music.homeManagerModules.default
     
     ./nixvim
     ./shell.nix
@@ -59,9 +58,7 @@
   ];
 
   targets.genericLinux.enable = true;
-  programs.yandex-music.enable = true;
   programs.fastfetch.enable = true;
-  programs.yandex-music.tray.enable = false;
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git = {
