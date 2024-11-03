@@ -33,17 +33,17 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  boot.loader.systemd-boot.enable = false;
-  boot.loader.efi.canTouchEfiVariables = false;
-  boot.loader.grub = {
-    enable = true;
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-    extraConfig = ''
-      set timeout=10
-    '';
-    device = "nodev";
-  };
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.grub = {
+  #   enable = true;
+  #   efiSupport = true;
+  #   efiInstallAsRemovable = true;
+  #   extraConfig = ''
+  #     set timeout=10
+  #   '';
+  #   device = "nodev";
+  # };
   boot.supportedFilesystems = [ "ntfs" ];
 
   boot.binfmt.registrations.appimage = {
