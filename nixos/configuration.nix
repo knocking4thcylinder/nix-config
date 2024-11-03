@@ -9,7 +9,7 @@
     [
       ./modules/spoofdpi.nix
       ../stylix
-      yandex-music.nixosModules.default
+      inputs.yandex-music.nixosModules.default
       inputs.home-manager.nixosModules.home-manager
     ];
 
