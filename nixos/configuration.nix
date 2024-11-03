@@ -31,6 +31,29 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  boot.loader.systemd-boot.enable = false;
+  boot.loader.efi.canTouchEfiVariables = false;
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    efiInstallAsRemovable = true;
+    extraConfig = ''
+      set timeout=10
+    '';
+    device = "nodev";
+  };
+  boot.supportedFilesystems = [ "ntfs" ];
+
+  boot.binfmt.registrations.appimage = {
+    wrapInterpreterInShell = false;
+    interpreter = "${pkgs.appimage-run}/bin/appimage-run";
+    recognitionType = "magic";
+    offset = 0;
+    mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
+    magicOrExtension = ''\x7fELF....AI\x02'';
+  };
+
   
   services.avahi = {
   nssmdns4 = true;
@@ -77,6 +100,7 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lev-nix = {
+    shell = pkgs.nushell;
     isNormalUser = true;
     description = "lev";
     extraGroups = [ "networkmanager" "wheel" ];
@@ -101,8 +125,7 @@
     gamescopeSession.enable = true;
   };
   programs.gamemode.enable = true;
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = pkgs.nushell;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -124,6 +147,7 @@
     "/home/lev-nix/.steam/root/compatibilitytools.d";
   };
   environment.systemPackages = with pkgs; [
+    nushell
     busybox
     protonup
     nh
