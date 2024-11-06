@@ -8,16 +8,20 @@
     base16.url = "github:SenchoPens/base16.nix";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     yandex-music.url = "github:cucumber-sp/yandex-music-linux";
-    nixos-wsl.url = "github:nix-community/NixOS-WSL";
-    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL";
+      nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -50,8 +54,8 @@
 	  inputs.nixos-wsl.nixosModules.wsl
 	  inputs.stylix.nixosModules.stylix
 	  inputs.base16.nixosModule 
-	  ./nixos/wsl.nix
-	  ./nixos/hosts/hardware-wsl.nix
+	  ./nixos/hosts/wsl/wsl.nix
+	  ./nixos/hosts/wsl/hardware-config.nix
 	];
       };
       
@@ -60,8 +64,9 @@
         modules = [
 	  inputs.stylix.nixosModules.stylix
 	  inputs.base16.nixosModule 
-          ./nixos/hosts/pc-hardware.nix
-          ./nixos/configuration.nix
+	  ./nixos/hosts/pc/hostname.nix
+          ./nixos/hosts/pc/hardware-config.nix
+	  ./nixos/hosts/laptop/configuration.nix
         ];
       };
 
@@ -70,8 +75,9 @@
         modules = [
 	  inputs.stylix.nixosModules.stylix
 	  inputs.base16.nixosModule
-          ./nixos/configuration.nix
-          ./nixos/hosts/laptop-hardware.nix
+          ./nixos/hosts/laptop/hostname.nix
+          ./nixos/hosts/laptop/hardware-config.nix
+	  ./nixos/hosts/laptop/configuration.nix
         ];
       };
     };

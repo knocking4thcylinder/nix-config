@@ -16,15 +16,14 @@
     };
     image = ./nix-wallpaper-simple-dark-gray.png;
     targets = {
-      nixvim.enable = true;
-      # gnome.enable = true;
-      # console.enable = true;
-      # gtk.enable = true;
-      # grub.enable = true;
+      nixvim.enable = false;
     };
     fonts = rec {
       sizes = {
+        applications = 11;
         terminal = 11;
+        desktop = 11;
+        popups = 11;
       };
       serif = {
         package = pkgs.dejavu_fonts;

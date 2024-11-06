@@ -39,7 +39,7 @@
     lsp = {
       enable = true;
       servers = {
-        nil_ls.enable = true;
+        nixd.enable = true;
         rust_analyzer = {
           enable = true;
           installRustc = true;
@@ -61,6 +61,15 @@
           K = "hover";
           "<F2>" = "rename";
         };
+      };
+    };
+
+    telescope = {
+      enable = true; 
+      highlightTheme = "rose-pine";
+      keymaps = {
+        "<leader>fs" = "live_grep";
+        "<leader>ff" = "find_files";
       };
     };
 
@@ -95,10 +104,6 @@
           documentation.border = "rounded";
         };
       };
-    };
-
-    lsp-format = {
-      enable = true;
     };
   };
 }
