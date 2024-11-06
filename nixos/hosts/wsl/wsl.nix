@@ -7,7 +7,7 @@
   ...
 }: {
   imports = [
-    ../stylix
+    ../../../stylix
     inputs.home-manager.nixosModules.home-manager
   ];
   # FIXME: change to your tz! look it up with "timedatectl list-timezones"
@@ -19,7 +19,7 @@
     extraSpecialArgs = { inherit inputs outputs; };
     users = {
       # Import your home-manager configuration
-      lev-nix = import ../home-manager/home.nix;
+      lev-nix = import ../../../home-manager/home.nix;
     };
   };
 

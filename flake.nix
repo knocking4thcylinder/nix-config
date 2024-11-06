@@ -10,7 +10,7 @@
     yandex-music.url = "github:cucumber-sp/yandex-music-linux";
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
-      nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -20,7 +20,7 @@
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager";
-      home-manager.inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

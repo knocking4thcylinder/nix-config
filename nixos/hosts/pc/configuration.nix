@@ -7,8 +7,8 @@
 {
   imports =
     [
-      ./modules/spoofdpi.nix
-      ../stylix
+      ../../modules/spoofdpi.nix
+      ../../../stylix
       inputs.yandex-music.nixosModules.default
       inputs.home-manager.nixosModules.home-manager
     ];
@@ -136,7 +136,7 @@
     extraSpecialArgs = { inherit inputs outputs; };
     users = {
       # Import your home-manager configuration
-      lev-nix = import ../home-manager/home.nix;
+      lev-nix = import ../../../home-manager/home.nix;
     };
   };
 
