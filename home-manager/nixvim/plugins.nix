@@ -4,6 +4,7 @@
   programs.nixvim = {
     extraPlugins = [
       pkgs.vimPlugins.stay-centered-nvim
+      pkgs.luajit
     ];
   
   extraConfigLua = ''
@@ -22,6 +23,10 @@
     todo-comments.settings = {
       enable = true;
       signs = true;
+    };
+
+    hardtime = {
+      enable = true;
     };
 
     treesitter = {
