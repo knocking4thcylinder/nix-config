@@ -12,7 +12,7 @@
   ];
   # FIXME: change to your tz! look it up with "timedatectl list-timezones"
   time.timeZone = "Europe/Moscow";
-
+  nixpkgs.config.allowUnfree = true;
   networking.hostName = "lev-wsl";
 
   home-manager = {
@@ -56,6 +56,15 @@
 
   environment.systemPackages = [
     (import ./win32yank.nix {inherit pkgs;})
+    pkgs.nushell
+    pkgs.busybox
+    pkgs.nh
+    pkgs.ookla-speedtest
+    pkgs.wget
+    pkgs.btop
+    pkgs.zig
+    pkgs.wl-clipboard
+    pkgs.gcc
   ];
 
   system.stateVersion = "22.05";
