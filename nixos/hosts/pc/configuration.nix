@@ -14,6 +14,7 @@
     ];
 
 
+  time.timeZone = "Europe/Moscow";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
   # Enable the X11 windowing system.
