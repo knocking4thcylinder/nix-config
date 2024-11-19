@@ -105,7 +105,7 @@
     shell = pkgs.nushell;
     isNormalUser = true;
     description = "lev";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -145,6 +145,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  environment.variables.EDITOR = "nvim";
   environment.sessionVariables = {
   STEAM_EXTRA_COMPAT_TOOLS_PATHS = 
     "/home/lev-nix/.steam/root/compatibilitytools.d";

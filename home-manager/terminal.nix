@@ -11,6 +11,7 @@
         enable_audio_bell = false;
         mouse_hide_wait = "-1.0";
         window_padding_width = 0;
+        hide_window_decorations = true;
         # background_opacity = "0.9";
         # background_blur = 4;
       };

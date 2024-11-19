@@ -18,6 +18,13 @@
     codeium-nvim.enable = true;
     sleuth.enable = true;
     commentary.enable = true;
+    chadtree = {
+      enable = true;
+    };
+    alpha = {
+      enable = true;
+      theme = "startify";
+    };
     tmux-navigator.enable = true;
 
     todo-comments.settings = {
@@ -28,6 +35,8 @@
     hardtime = {
       enable = true;
     };
+
+    oil.enable = true;
 
     treesitter = {
       enable = true;
@@ -44,7 +53,7 @@
     lsp = {
       enable = true;
       servers = {
-        nixd.enable = true;
+        nil_ls.enable = true;
         rust_analyzer = {
           enable = true;
           installRustc = true;

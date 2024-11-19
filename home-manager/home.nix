@@ -11,6 +11,7 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     
+    ./neovim
     ./nixvim
     ./shell.nix
     ./terminal.nix
