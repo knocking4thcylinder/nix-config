@@ -163,7 +163,6 @@
   };
   environment.systemPackages = with pkgs; [
     busybox
-    yazi
     protonup
     nh
     ookla-speedtest
