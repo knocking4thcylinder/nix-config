@@ -3,7 +3,7 @@
 {
   programs = {
     nushell = {
-      enable = true;
+      enable = false;
       
       shellAliases = {
         ll = "ls -l";

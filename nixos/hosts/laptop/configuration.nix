@@ -2,21 +2,28 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, outputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  outputs,
+  ...
+}:
 
 {
-  imports =
-    [
-      ../../modules/spoofdpi.nix
-      ../../../stylix
-      inputs.yandex-music.nixosModules.default
-      inputs.home-manager.nixosModules.home-manager
-    ];
-
+  imports = [
+    ../../modules/spoofdpi.nix
+    ../../../stylix
+    inputs.yandex-music.nixosModules.default
+    inputs.home-manager.nixosModules.home-manager
+  ];
 
   time.timeZone = "Europe/Moscow";
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -56,9 +63,8 @@
     magicOrExtension = ''\x7fELF....AI\x02'';
   };
 
-  
   services.avahi = {
-  nssmdns4 = true;
+    nssmdns4 = true;
     enable = true;
     ipv4 = true;
     ipv6 = true;
@@ -68,7 +74,6 @@
       workstation = true;
     };
   };
-
 
   # Enable sound with pipewire.
   hardware.graphics = {
@@ -82,7 +87,7 @@
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   hardware.pulseaudio.enable = false;
-  
+
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -101,13 +106,18 @@
   services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  programs.zsh.enable = true;
   users.users.lev-nix = {
-    shell = pkgs.nushell;
+    shell = pkgs.zsh;
     isNormalUser = true;
     description = "lev";
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "dialout"
+    ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -123,18 +133,20 @@
 
   programs.steam = {
     enable = true;
-    remotePlay.openFirewall = true; 
+    remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     gamescopeSession.enable = true;
   };
   programs.gamemode.enable = true;
-  users.defaultUserShell = pkgs.nushell;
+  users.defaultUserShell = pkgs.zsh;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
+    extraSpecialArgs = {
+      inherit inputs outputs;
+    };
     users = {
       # Import your home-manager configuration
       lev-nix = import ../../../home-manager/home.nix;
@@ -147,12 +159,11 @@
   # $ nix search wget
   environment.variables.EDITOR = "nvim";
   environment.sessionVariables = {
-  STEAM_EXTRA_COMPAT_TOOLS_PATHS = 
-    "/home/lev-nix/.steam/root/compatibilitytools.d";
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/lev-nix/.steam/root/compatibilitytools.d";
   };
   environment.systemPackages = with pkgs; [
-    nushell
     busybox
+    yazi
     protonup
     nh
     ookla-speedtest

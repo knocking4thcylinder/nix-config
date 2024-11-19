@@ -5,7 +5,7 @@
     kitty = {
       enable = true;
       settings = {
-        shell = "/home/lev-nix/.nix-profile/bin/nu";
+        shell = "/home/lev-nix/.nix-profile/bin/zsh";
         confirm_os_window_close = 1;
         dynamic_background_opacity = true;
         enable_audio_bell = false;
@@ -25,7 +25,7 @@
         };
 
         terminal = {
-          shell = "/home/lev-nix/.nix-profile/bin/nu";
+          shell = "/home/lev-nix/.nix-profile/bin/zsh";
         };
       };
     };
