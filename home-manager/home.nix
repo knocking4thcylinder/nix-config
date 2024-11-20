@@ -7,10 +7,11 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
-    
+
     ./neovim
     ./nixvim
     ./shell.nix
@@ -50,7 +51,7 @@
   };
 
   # Add stuff for your user as you see fit:
-  home.packages = with pkgs; [ 
+  home.packages = with pkgs; [
     yazi
     lazygit
     ripgrep
