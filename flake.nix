@@ -24,62 +24,71 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    ...
-  } @ inputs: let
-    inherit (self) outputs;
-    systems = [
-      "aarch64-linux"
-      "i686-linux"
-      "x86_64-linux"
-      "aarch64-darwin"
-      "x86_64-darwin"
-    ];
-    forAllSystems = nixpkgs.lib.genAttrs systems;
-  in {
-    packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
-    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    let
+      inherit (self) outputs;
+      systems = [
+        "aarch64-linux"
+        "i686-linux"
+        "x86_64-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
+      ];
+      forAllSystems = nixpkgs.lib.genAttrs systems;
+    in
+    {
+      packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
-    overlays = import ./overlays {inherit inputs;};
-    nixosModules = import ./modules/nixos;
-    homeManagerModules = import ./modules/home-manager;
+      overlays = import ./overlays { inherit inputs; };
+      nixosModules = import ./modules/nixos;
+      homeManagerModules = import ./modules/home-manager;
 
-    nixosConfigurations = {
-      lev-wsl = nixpkgs.lib.nixosSystem {
-      	specialArgs = {inherit inputs outputs;};
-	modules = [
-	  inputs.nixos-wsl.nixosModules.wsl
-	  inputs.stylix.nixosModules.stylix
-	  inputs.base16.nixosModule 
-	  ./nixos/hosts/wsl/wsl.nix
-	  ./nixos/hosts/wsl/hardware-config.nix
-	];
-      };
-      
-      lev-pc = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-	  inputs.stylix.nixosModules.stylix
-	  inputs.base16.nixosModule 
-	  ./nixos/hosts/pc/hostname.nix
-          ./nixos/hosts/pc/hardware-config.nix
-	  ./nixos/hosts/laptop/configuration.nix
-        ];
-      };
+      nixosConfigurations = {
+        lev-wsl = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            inputs.nixos-wsl.nixosModules.wsl
+            inputs.stylix.nixosModules.stylix
+            inputs.base16.nixosModule
+            ./nixos/hosts/wsl/wsl.nix
+            ./nixos/hosts/wsl/hardware-configuration.nix
+          ];
+        };
 
-      lev-laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-	  inputs.stylix.nixosModules.stylix
-	  inputs.base16.nixosModule
-          ./nixos/hosts/laptop/hostname.nix
-          ./nixos/hosts/laptop/hardware-config.nix
-	  ./nixos/hosts/laptop/configuration.nix
-        ];
+        lev-pc = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            inputs.stylix.nixosModules.stylix
+            inputs.base16.nixosModule
+            ./nixos/hosts/pc/hostname.nix
+            ./nixos/hosts/pc/hardware-configuration.nix
+            ./nixos/hosts/laptop/configuration.nix
+          ];
+        };
+
+        lev-laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            inputs.stylix.nixosModules.stylix
+            inputs.base16.nixosModule
+            ./nixos/hosts/laptop/hostname.nix
+            ./nixos/hosts/laptop/hardware-configuration.nix
+            ./nixos/hosts/laptop/configuration.nix
+          ];
+        };
       };
     };
-  };
 }
