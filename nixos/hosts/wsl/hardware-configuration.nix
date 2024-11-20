@@ -42,7 +42,7 @@
     };
 
   fileSystems."/mnt/wslg/distro" =
-    { device = "none";
+    { device = "";
       fsType = "none";
       options = [ "bind" ];
     };
@@ -52,15 +52,15 @@
       fsType = "overlay";
     };
 
-  fileSystems."/mnt/wslg/doc" =
-    { device = "none";
-      fsType = "overlay";
-    };
-
   fileSystems."/tmp/.X11-unix" =
     { device = "/mnt/wslg/.X11-unix";
       fsType = "none";
       options = [ "bind" ];
+    };
+
+  fileSystems."/mnt/wslg/doc" =
+    { device = "none";
+      fsType = "overlay";
     };
 
   fileSystems."/mnt/c" =
@@ -79,7 +79,7 @@
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/d2856ed3-2ab5-47f1-9235-84f5513e7095"; }
+    [ { device = "/dev/disk/by-uuid/474ab00e-85ac-4263-94f3-ef3294fbc66b"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -87,6 +87,7 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
   # networking.interfaces.eth0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
