@@ -5,7 +5,7 @@
     enable = true;
     prefix = "C-a";
     shortcut = "a";
-    shell = "${pkgs.nushell}/bin/nu";
+    shell = "${pkgs.zsh}/bin/zsh";
     terminal = "screen-256color";
     historyLimit = 100000;
     clock24 = true;

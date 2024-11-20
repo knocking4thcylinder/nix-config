@@ -29,8 +29,8 @@
   ];
 
   # FIXME: change your shell here if you don't want zsh
-  environment.pathsToLink = ["/share/nu"];
-  environment.shells = [pkgs.nushell];
+  environment.pathsToLink = ["/share/zsh"];
+  environment.shells = [pkgs.zsh];
 
   environment.enableAllTerminfo = true;
 
@@ -38,10 +38,11 @@
 
   services.openssh.enable = true;
 
+  programs.zsh.enable = true;
   users.users.lev-nix = {
     isNormalUser = true;
     # FIXME: change your shell here if you don't want zsh
-    shell = pkgs.nushell;
+    shell = pkgs.zsh;
     extraGroups = [
       "wheel"
       "docker"
@@ -56,7 +57,6 @@
 
   environment.systemPackages = [
     (import ./win32yank.nix {inherit pkgs;})
-    pkgs.nushell
     pkgs.busybox
     pkgs.nh
     pkgs.ookla-speedtest

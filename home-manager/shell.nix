@@ -38,6 +38,7 @@
       '';
 
       shellAliases = {
+        lg = "lazygit";
         ls = "eza";
         ll = "eza -l";
         rebuild = "nh os switch ~/nix-config";

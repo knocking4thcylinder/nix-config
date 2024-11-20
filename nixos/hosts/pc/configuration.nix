@@ -101,8 +101,9 @@
   services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  programs.zsh.enable = true;
   users.users.lev-nix = {
-    shell = pkgs.nushell;
+    shell = pkgs.zsh;
     isNormalUser = true;
     description = "lev";
     extraGroups = [ "networkmanager" "wheel" ];
@@ -128,7 +129,7 @@
     gamescopeSession.enable = true;
   };
   programs.gamemode.enable = true;
-  users.defaultUserShell = pkgs.nushell;
+  users.defaultUserShell = pkgs.zsh;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -151,7 +152,6 @@
       "/home/lev-nix/.steam/root/compatibilitytools.d";
   };
   environment.systemPackages = with pkgs; [
-    nushell
     busybox
     protonup
     nh
