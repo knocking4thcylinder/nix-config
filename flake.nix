@@ -2,6 +2,7 @@
   description = "Your new nix config";
 
   inputs = {
+    zig.url = "github:mitchellh/zig-overlay";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     stylix.url = "github:danth/stylix";

@@ -64,6 +64,7 @@
     pkgs.btop
     pkgs.zig
     pkgs.wl-clipboard
+    inputs.zig.packages.master
     pkgs.gcc
   ];
 
