@@ -159,7 +159,7 @@
     wget
     btop
     inputs.zen-browser.packages."${system}".specific
-    zig
+    zigpkgs.master
     wl-clipboard
     gcc
     mangohud

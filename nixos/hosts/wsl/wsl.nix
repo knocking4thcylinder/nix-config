@@ -5,7 +5,8 @@
   inputs,
   outputs,
   ...
-}: {
+}:
+{
   imports = [
     ../../../stylix
     inputs.home-manager.nixosModules.home-manager
@@ -16,7 +17,9 @@
   networking.hostName = "lev-wsl";
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
+    extraSpecialArgs = {
+      inherit inputs outputs;
+    };
     users = {
       # Import your home-manager configuration
       lev-nix = import ../../../home-manager/home.nix;
@@ -29,8 +32,8 @@
   ];
 
   # FIXME: change your shell here if you don't want zsh
-  environment.pathsToLink = ["/share/zsh"];
-  environment.shells = [pkgs.zsh];
+  environment.pathsToLink = [ "/share/zsh" ];
+  environment.shells = [ pkgs.zsh ];
 
   environment.enableAllTerminfo = true;
 
@@ -56,13 +59,13 @@
   };
 
   environment.systemPackages = [
-    (import ./win32yank.nix {inherit pkgs;})
+    (import ./win32yank.nix { inherit pkgs; })
     pkgs.busybox
     pkgs.nh
     pkgs.ookla-speedtest
     pkgs.wget
     pkgs.btop
-    pkgs.zig
+    zigpkgs.master
     pkgs.wl-clipboard
     pkgs.gcc
   ];

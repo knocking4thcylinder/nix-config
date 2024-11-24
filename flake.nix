@@ -47,10 +47,6 @@
       packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
       formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
-      overlays = import ./overlays { inherit inputs; };
-      nixosModules = import ./modules/nixos;
-      homeManagerModules = import ./modules/home-manager;
-
       nixosConfigurations = {
         lev-wsl = nixpkgs.lib.nixosSystem {
           specialArgs = {
@@ -62,6 +58,7 @@
             inputs.base16.nixosModule
             ./nixos/hosts/wsl/wsl.nix
             ./nixos/hosts/wsl/hardware-configuration.nix
+            (import ./overlays)
           ];
         };
 
@@ -75,6 +72,7 @@
             ./nixos/hosts/pc/hostname.nix
             ./nixos/hosts/pc/hardware-configuration.nix
             ./nixos/hosts/laptop/configuration.nix
+            (import ./overlays)
           ];
         };
 
@@ -88,6 +86,7 @@
             ./nixos/hosts/laptop/hostname.nix
             ./nixos/hosts/laptop/hardware-configuration.nix
             ./nixos/hosts/laptop/configuration.nix
+            (import ./overlays)
           ];
         };
       };
