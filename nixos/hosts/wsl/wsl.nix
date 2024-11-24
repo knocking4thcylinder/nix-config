@@ -65,7 +65,7 @@
     pkgs.ookla-speedtest
     pkgs.wget
     pkgs.btop
-    zigpkgs.master
+    pkgs.zig
     pkgs.wl-clipboard
     pkgs.gcc
   ];
