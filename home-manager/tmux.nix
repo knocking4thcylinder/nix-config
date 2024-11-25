@@ -9,8 +9,8 @@
     terminal = "screen-256color";
     historyLimit = 100000;
     clock24 = true;
-    keyMode = "emacs";
-    mouse = true;
+    keyMode = "vi";
+    mouse = false;
    
     extraConfig = ''
       unbind %
