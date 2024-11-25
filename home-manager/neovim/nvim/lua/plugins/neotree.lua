@@ -7,7 +7,6 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	config = function()
-		vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal<CR>", {})
 		require("neo-tree").setup({
 			close_if_last_window = true,
 			popup_border_style = "rounded",
@@ -21,5 +20,6 @@ return {
 				},
 			},
 		})
+		vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal<CR>", {})
 	end,
 }
