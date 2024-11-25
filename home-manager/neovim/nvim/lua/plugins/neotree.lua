@@ -36,7 +36,7 @@ return {
 			},
 			window = {
 				position = "right",
-				width = 35,
+				width = 30,
 			},
 		})
 		vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal<CR>", {})
