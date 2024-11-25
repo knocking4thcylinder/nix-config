@@ -9,7 +9,7 @@
     terminal = "screen-256color";
     historyLimit = 100000;
     clock24 = true;
-    keyMode = "vi";
+    keyMode = "emacs";
     mouse = true;
    
     extraConfig = ''
@@ -28,7 +28,7 @@
 
     plugins = with pkgs.tmuxPlugins; [
       vim-tmux-navigator
-      better-mouse-mode
+      # better-mouse-mode
       {
         plugin = rose-pine;
         extraConfig = ''
