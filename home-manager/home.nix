@@ -40,6 +40,7 @@
 
   targets.genericLinux.enable = true;
   programs.fastfetch.enable = true;
+  programs.bat.enable = true;
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git = {
