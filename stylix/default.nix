@@ -20,10 +20,10 @@
     };
     fonts = rec {
       sizes = {
-        applications = 11;
-        terminal = 11;
-        desktop = 11;
-        popups = 11;
+        applications = 10;
+        terminal = 10;
+        desktop = 10;
+        popups = 10;
       };
       serif = {
         package = pkgs.dejavu_fonts;
