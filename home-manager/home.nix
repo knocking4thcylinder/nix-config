@@ -12,10 +12,10 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
 
+    ./vscode
     ./neovim
     ./nixvim
-    ./shell.nix
-    ./terminal.nix
+    ./terminal
     ../stylix/targets.nix
   ];
 

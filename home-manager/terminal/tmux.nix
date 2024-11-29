@@ -11,7 +11,7 @@
     clock24 = true;
     keyMode = "vi";
     mouse = false;
-   
+
     extraConfig = ''
       unbind %
       bind - split-window -v
@@ -22,7 +22,7 @@
       bind -r h resize-pane -L 5
       bind -r k resize-pane -U 5
       bind -r l resize-pane -R 5
-     
+
       bind -r m resize-pane -Z
     '';
 

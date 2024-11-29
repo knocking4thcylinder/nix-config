@@ -1,10 +1,6 @@
 { pkgs, config, ... }:
 
 {
-  imports = [
-    ./tmux.nix
-    # ./nu.nix
-  ];
   home.packages = with pkgs; [
     github-cli
     any-nix-shell

@@ -4,7 +4,7 @@
   programs = {
     nushell = {
       enable = false;
-      
+
       shellAliases = {
         ll = "ls -l";
         rebuild = "nh os switch ~/nix-config";
@@ -31,9 +31,9 @@
     zoxide = {
       enable = true;
       enableNushellIntegration = true;
-      # options = [
-      #   "--cmd cd"
-      # ];
+      options = [
+        "--cmd cd"
+      ];
     };
 
     carapace = {
