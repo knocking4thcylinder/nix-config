@@ -9,17 +9,6 @@
   ];
 
   programs = {
-    zoxide = {
-      enable = true;
-      enableZshIntegration = true;
-      options = [
-        "--cmd cd"
-      ];
-    };
-    carapace = {
-      enable = true;
-      enableZshIntegration = true;
-    };
     zsh = {
       enable = true;
       enableCompletion = true;
@@ -45,13 +34,6 @@
       history = {
         size = 10000;
         path = "${config.xdg.dataHome}/zsh/history";
-      };
-    };
-
-    starship = {
-      enable = true;
-      settings = {
-        add_newline = false;
       };
     };
   };

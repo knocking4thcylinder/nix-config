@@ -27,25 +27,5 @@
         }
       '';
     };
-
-    zoxide = {
-      enable = true;
-      enableNushellIntegration = true;
-      options = [
-        "--cmd cd"
-      ];
-    };
-
-    carapace = {
-      enable = true;
-      enableNushellIntegration = true;
-    };
-
-    starship = {
-      enable = true;
-      settings = {
-        add_newline = false;
-      };
-    };
   };
 }
