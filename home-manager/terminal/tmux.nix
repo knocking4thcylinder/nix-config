@@ -10,7 +10,7 @@
     historyLimit = 100000;
     clock24 = true;
     keyMode = "vi";
-    mouse = false;
+    mouse = true;
 
     extraConfig = ''
       unbind %
@@ -28,7 +28,7 @@
 
     plugins = with pkgs.tmuxPlugins; [
       vim-tmux-navigator
-      # better-mouse-mode
+      better-mouse-mode
       {
         plugin = rose-pine;
         extraConfig = ''
