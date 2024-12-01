@@ -30,7 +30,7 @@
         name = "DejaVu Serif";
       };
       sansSerif = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
+        package = pkgs.jetbrains-mono;
         name = "JetBrainsMono Nerd Font";
       };
       monospace = sansSerif;
