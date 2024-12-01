@@ -47,6 +47,12 @@
     enable = true;
     userName = "knocking4thcylinder";
     userEmail = "lev.fedorets@ya.ru";
+    lfs.enable = true;
+    extraConfig = {
+      pull = {
+        rebase = false;
+      };
+    };
   };
 
   # Nicely reload system units when changing configs
