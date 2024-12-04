@@ -8,7 +8,12 @@
     stylix.url = "github:danth/stylix";
     base16.url = "github:SenchoPens/base16.nix";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    yandex-music.url = "github:cucumber-sp/yandex-music-linux";
+    yandex-music = {
+      type = "github";
+      owner = "cucumber-sp";
+      repo = "yandex-music-linux";
+      ref = "refs/tags/v5.29.3";
+    };
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";

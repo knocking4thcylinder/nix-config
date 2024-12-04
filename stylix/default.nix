@@ -1,4 +1,10 @@
-{ pkgs, config, lib, options, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  options,
+  ...
+}:
 
 {
   stylix = {
@@ -18,22 +24,27 @@
     targets = {
       nixvim.enable = false;
     };
-    fonts = rec {
+    fonts = {
       sizes = {
-        applications = 10;
-        terminal = 10;
-        desktop = 10;
-        popups = 10;
+        applications = 12;
+        terminal = 12;
+        desktop = 12;
+        popups = 12;
       };
       serif = {
         package = pkgs.dejavu_fonts;
         name = "DejaVu Serif";
       };
       sansSerif = {
-        package = pkgs.jetbrains-mono;
-        name = "JetBrainsMono Nerd Font";
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrains Mono NF";
+        # name = "FiraCode";
       };
-      monospace = sansSerif;
+      monospace = {
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrains Mono NF";
+        # name = "FiraCode";
+      };
       emoji = {
         package = pkgs.noto-fonts-color-emoji;
         name = "Noto Color Emoji";

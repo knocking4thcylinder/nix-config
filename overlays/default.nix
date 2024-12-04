@@ -8,7 +8,7 @@
   nixpkgs.overlays = [
     inputs.zig.overlays.default
     (final: prev: {
-      zig = pkgs.zigpkgs.master;
+      zig-dev = pkgs.zigpkgs.master;
     })
   ];
 }
