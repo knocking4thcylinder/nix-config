@@ -29,6 +29,8 @@
         rebuild = "nh os switch ~/nix-config";
         update = "nix flake update --flake ~/nix-config";
         ssh = "TERM=xterm-256color ssh";
+        vim = "nvim -u ~/nix-config/home-manager/neovim/nvim/init.lua";
+        nvim = "nvim -u ~/nix-config/home-manager/neovim/nvim/init.lua";
         # nix-shell = "nix-shell --run zsh";
       };
       history = {
