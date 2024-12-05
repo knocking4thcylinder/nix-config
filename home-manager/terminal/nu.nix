@@ -11,8 +11,6 @@
         update = "nix flake update --flake ~/nix-config";
         ssh = "TERM=xterm-256color ssh";
         nix-shell = "nix-shell --run nu";
-        vim = "nvim -u ~/nix-config/home-manager/neovim/nvim/init.lua";
-        nvim = "nvim -u ~/nix-config/home-manager/neovim/nvim/init.lua";
       };
 
       extraConfig = ''
