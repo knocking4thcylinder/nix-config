@@ -36,18 +36,18 @@
         name = "DejaVu Serif";
       };
       sansSerif = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrains Mono NF";
-        # name = "FiraCode";
+        package = pkgs.nerd-fonts.fira-code;
+        # name = "JetBrains Mono NF";
+        name = "Fira Code Nerd Font Mono";
       };
       monospace = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrains Mono NF";
-        # name = "FiraCode";
+        package = pkgs.nerd-fonts.fira-code;
+        # name = "JetBrains Mono NF";
+        name = "Fira Code Nerd Font Mono";
       };
       emoji = {
-        package = pkgs.noto-fonts-color-emoji;
-        name = "Noto Color Emoji";
+        package = pkgs.font-awesome_6;
+        name = "Font Awesome 6";
       };
     };
   };

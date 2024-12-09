@@ -1,13 +1,6 @@
 { pkgs, config, ... }:
 
 {
-  home.packages = with pkgs; [
-    github-cli
-    any-nix-shell
-    fzf
-    eza
-  ];
-
   programs = {
     zsh = {
       enable = true;
@@ -18,8 +11,12 @@
       initExtra = ''
         any-nix-shell zsh --info-right | source /dev/stdin
         bindkey -v '^?' backward-delete-char
-        source "$(fzf-share)/key-bindings.zsh"
-        source "$(fzf-share)/completion.zsh"
+        export FZF_DEFAULT_OPTS="
+          --color=fg:#908caa,bg:#101010,hl:#ebbcba
+          --color=fg+:#e0def4,bg+:#101010,hl+:#ebbcba
+          --color=border:#403d52,header:#31748f,gutter:#191724
+          --color=spinner:#f6c177,info:#9ccfd8
+          --color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
       '';
 
       shellAliases = {

@@ -12,11 +12,13 @@
 
 {
   imports = [
-    ../../modules/spoofdpi.nix
+    ../../modules/zapret.nix
     ../../../stylix
     inputs.yandex-music.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
   ];
+
+  disabledModules = [ "services/networking/zapret.nix" ];
 
   time.timeZone = "Europe/Moscow";
   nix.settings.experimental-features = [
@@ -162,6 +164,7 @@
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/lev-nix/.steam/root/compatibilitytools.d";
   };
   environment.systemPackages = with pkgs; [
+    # discord-canary
     busybox
     protonup
     nh
