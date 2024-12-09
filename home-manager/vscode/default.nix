@@ -19,13 +19,7 @@
     ];
     userSettings = {
       "editor.lineNumbers" = "relative";
-      "workbench.colorTheme" = "Rosé Pine";
       "workbench.sideBar.location" = "right";
-      "workbench.colorCustomizations" = {
-        "editor.background" = "#101010";
-        "editorIndentGuide.background1" = "#404040";
-
-      };
     };
   };
 }

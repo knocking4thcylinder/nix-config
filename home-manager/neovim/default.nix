@@ -14,13 +14,15 @@
     };
 
     packages = with pkgs; [
+      gnumake
+      luarocks
       haskell-language-server
       stylua
       luajit
       lua-language-server
       nixd
       lemminx
-      java-language-server
+      jdt-language-server
       rust-analyzer
       zls
       clang-tools

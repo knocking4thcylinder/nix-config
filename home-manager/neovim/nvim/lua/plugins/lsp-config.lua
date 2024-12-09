@@ -10,6 +10,7 @@ return {
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.lemminx.setup({ capabilities = capabilities })
 			lspconfig.hls.setup({ capabilities = capabilities })
+			lspconfig.jdtls.setup({ capabilities = capabilities })
 			lspconfig.nixd.setup({
 				capabilities = capabilities,
 				cmd = { "nixd" },
@@ -23,10 +24,6 @@ return {
 						},
 					},
 				},
-			})
-			lspconfig.java_language_server.setup({
-				capabilities = capabilities,
-				cmd = { "~/.local/share/nvim/mason/bin/java-language-server" },
 			})
 			lspconfig.rust_analyzer.setup({
 				on_attach = function(client, bufnr)
