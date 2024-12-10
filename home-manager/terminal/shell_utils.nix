@@ -23,7 +23,7 @@
     eza = {
       enable = true;
       enableZshIntegration = true;
-      enableNushellIntegration = true;
+      enableNushellIntegration = false;
       icons = "auto";
       colors = "always";
     };
@@ -37,6 +37,8 @@
     starship = {
       enable = true;
       settings = {
+        kotlin.symbol = " ";
+        gradle.symbol = " ";
         add_newline = false;
       };
     };

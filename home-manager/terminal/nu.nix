@@ -3,14 +3,16 @@
 {
   programs = {
     nushell = {
-      enable = false;
+      enable = true;
 
       shellAliases = {
         ll = "ls -l";
+        l = "ls -la";
         rebuild = "nh os switch ~/nix-config";
         update = "nix flake update --flake ~/nix-config";
         ssh = "TERM=xterm-256color ssh";
         nix-shell = "nix-shell --run nu";
+        lg = "lazygit";
       };
 
       extraConfig = ''

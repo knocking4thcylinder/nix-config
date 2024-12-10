@@ -11,7 +11,7 @@
     kitty = {
       enable = true;
       settings = {
-        shell = "${pkgs.zsh}/bin/zsh";
+        # shell = "${pkgs.zsh}/bin/zsh";
         confirm_os_window_close = 1;
         dynamic_background_opacity = true;
         enable_audio_bell = false;
@@ -31,7 +31,7 @@
         };
 
         terminal = {
-          shell = "${pkgs.zsh}/bin/zsh";
+          # shell = "${pkgs.zsh}/bin/zsh";
         };
       };
     };

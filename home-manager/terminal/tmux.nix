@@ -9,7 +9,7 @@
     enable = true;
     prefix = "C-a";
     shortcut = "a";
-    shell = "${pkgs.zsh}/bin/zsh";
+    # shell = "${pkgs.zsh}/bin/zsh";
     baseIndex = 1;
     terminal = "screen-256color";
     historyLimit = 100000;

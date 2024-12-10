@@ -110,7 +110,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   programs.zsh.enable = true;
   users.users.lev-nix = {
-    shell = pkgs.zsh;
+    shell = pkgs.nushell;
     isNormalUser = true;
     description = "lev";
     extraGroups = [
@@ -140,7 +140,7 @@
     gamescopeSession.enable = true;
   };
   programs.gamemode.enable = true;
-  users.defaultUserShell = pkgs.zsh;
+  # users.defaultUserShell = pkgs.zsh;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
