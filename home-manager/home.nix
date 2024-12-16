@@ -47,10 +47,14 @@
     enable = true;
     userName = "knocking4thcylinder";
     userEmail = "lev.fedorets@ya.ru";
+
     lfs.enable = true;
     extraConfig = {
       pull = {
-        rebase = false;
+        rebase = true;
+      };
+      init = {
+        defaultBranch = "master";
       };
     };
   };

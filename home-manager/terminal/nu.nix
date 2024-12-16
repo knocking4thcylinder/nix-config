@@ -16,6 +16,7 @@
       };
 
       extraConfig = ''
+        $env.PATH = ($env.PATH | split row (char esep) | append '/home/lev-nix/go/bin/')
         $env.EDITOR = "nvim"
         $env.config = {
           show_banner: false

@@ -14,22 +14,28 @@
     };
 
     packages = with pkgs; [
+      # neovim plugin dependencies
       gnumake
       luarocks
-      haskell-language-server
-      stylua
       luajit
+
+      # LSPs
+      haskell-language-server
       lua-language-server
       nixd
-      lemminx
       jdt-language-server
       rust-analyzer
       zls
-      clang-tools
       python312Packages.python-lsp-server
+
+      # formatters
       python312Packages.black
       python312Packages.isort
+      clang-tools
+      google-java-format
       nixfmt-rfc-style
+      lemminx
+      stylua
     ];
   };
 }

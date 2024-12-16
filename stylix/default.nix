@@ -21,29 +21,26 @@
       applications = 1;
     };
     image = ./nix-wallpaper-simple-dark-gray.png;
-    targets = {
-      nixvim.enable = false;
-    };
     fonts = {
       sizes = {
-        applications = 12;
-        terminal = 12;
-        desktop = 12;
-        popups = 12;
+        applications = 14;
+        terminal = 14;
+        desktop = 14;
+        popups = 14;
       };
       serif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Serif";
+        package = pkgs.iosevka;
+        name = "Iosevka";
       };
       sansSerif = {
-        package = pkgs.nerd-fonts.fira-code;
-        # name = "JetBrains Mono NF";
-        name = "Fira Code Nerd Font Mono";
+        package = pkgs.nerd-fonts.iosevka;
+        name = "Iosevka NF";
+        # name = "Fira Code Nerd Font Mono";
       };
       monospace = {
-        package = pkgs.nerd-fonts.fira-code;
-        # name = "JetBrains Mono NF";
-        name = "Fira Code Nerd Font Mono";
+        package = pkgs.nerd-fonts.iosevka-term;
+        name = "Iosevka Term NF";
+        # name = "Fira Code Nerd Font Mono";
       };
       emoji = {
         package = pkgs.font-awesome_6;

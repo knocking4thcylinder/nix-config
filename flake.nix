@@ -12,7 +12,7 @@
       type = "github";
       owner = "cucumber-sp";
       repo = "yandex-music-linux";
-      ref = "refs/tags/v5.29.3";
+      # ref = "refs/tags/v5.31.2";
     };
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";

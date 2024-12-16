@@ -856,16 +856,15 @@
         "ymExe": "ymExe"
       },
       "locked": {
-        "lastModified": 1732754753,
-        "narHash": "sha256-glmfmEIliZ2P8N/aeC+vVO/OrZpoYz/1d2o5yciKPfE=",
+        "lastModified": 1733580574,
+        "narHash": "sha256-2Cpkwj2TajdOcnrxtdf3uwrHuqlEbG92u1AYVfVkkR0=",
         "owner": "cucumber-sp",
         "repo": "yandex-music-linux",
-        "rev": "1c23a18b1d6d1f6cddb5a9b9c74a809eb5aef145",
+        "rev": "af0c4de2612df90fae77294b11dca5bbaa90a466",
         "type": "github"
       },
       "original": {
         "owner": "cucumber-sp",
-        "ref": "refs/tags/v5.29.3",
         "repo": "yandex-music-linux",
         "type": "github"
       }
@@ -873,13 +872,13 @@
     "ymExe": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-CfvsHEUUQfFFDm2hS+6qHf4aGzlgOrCJLvHDvw6wE/E=",
+        "narHash": "sha256-pmW4gY0B4ZFaoA6IFTfmPG3Xlsvh0phwhECkd9eyCjE=",
         "type": "file",
-        "url": "https://music-desktop-application.s3.yandex.net/stable/Yandex_Music_x64_5.29.3.exe"
+        "url": "https://music-desktop-application.s3.yandex.net/stable/Yandex_Music_x64_5.31.2.exe"
       },
       "original": {
         "type": "file",
-        "url": "https://music-desktop-application.s3.yandex.net/stable/Yandex_Music_x64_5.29.3.exe"
+        "url": "https://music-desktop-application.s3.yandex.net/stable/Yandex_Music_x64_5.31.2.exe"
       }
     },
     "zen-browser": {
